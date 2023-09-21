@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cointainer {
+    width: 5vw;
+    height: 2vh;
+}
+
+body {
+    background: #000000;
+    color: white;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 500;
+    background: #fcfbff00;
+    width: 400px;
+    height: 0px;
+    margin: 5px;
+    margin-left: 5px;
+    border-radius: 1rem;
+    border: 1px solid #fffeff00;
+    position: relative;
+}
+
+#hours {
+    background: -webkit-linear-gradient(90deg, blue, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#minutes {
+    background: -webkit-linear-gradient(90deg, orange, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#seconds {
+    background: -webkit-linear-gradient(90deg, green, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#dot {
+    padding: 0 15px;
+}
+
+#ampm {
+    font-size: 2.5rem;
+
+    padding-top: 40px;
+    color: rgb(255, 70, 70);
+}
+
+.clock::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg, blue, orange, green);
+    background-size: 200% 200%;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    z-index: -1;
+    filter: blur(30px);
+    animation: glowing 5s ease infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
